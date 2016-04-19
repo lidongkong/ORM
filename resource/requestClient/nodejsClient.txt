@@ -1,0 +1,6 @@
+http://stackoverflow.com/questions/19392744/calling-a-web-service-using-nodejs
+http://stackoverflow.com/questions/30149327/can-node-js-make-a-restful-service-call
+http://stackoverflow.com/questions/5643321/how-to-make-remote-rest-call-inside-node-js-any-curl
+http://rapiddg.com/blog/calling-rest-api-nodejs-script
+http://isolasoftware.it/2012/05/28/call-rest-api-with-node-js/
+http://stackoverflow.com/questions/16148403/using-node-js-to-connect-to-a-rest-api/16155551#16155551

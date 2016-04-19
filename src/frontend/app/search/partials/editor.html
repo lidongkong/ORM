@@ -1,0 +1,133 @@
+ <style>
+	.gridDept { margin-top: 20px; height: 800px; width:1000px; borderZ: 1px solid black; }
+	.bnSave {margin-left:5px; margin-top:5px;}
+	.bnDelete {margin-top:5px;}
+	.standardButton
+	{
+		width: 110px;
+	} 
+ </style> 
+
+ 
+ <div style="margin-left:00px;" id="searchPane">
+	
+	<h3 class="col-sm-offset-2 col-sm-10" style="position:relative; left:-10px;">Test Search</h3>
+	
+	<br/> &nbsp;<br/> &nbsp;<br/>
+
+	<form class="form-horizontal" role="form">
+		<div style=" border-style: solid; border-width: 0px; ">
+			<div class="form-group">
+				<label class="control-label col-sm-2">Test Name:</label>
+				<div class="col-sm-6">
+					<input class="form-control" id="testName" name="testName" placeholder="Test Name" ng-model="search.testName" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Barcode:</label>
+				<div class="col-sm-6">
+					<input class="form-control quantity" id="barcode" name="barcode" placeholder="Barcode" ng-model="search.barcode" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2">Mnemonic:</label>
+				<div class="col-sm-6">
+					<input class="form-control" id="mnemonic" name="mnemonic" placeholder="Mnemonic" ng-model="search.mnemonic" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2">Is Panel:</label>
+				<div class="col-sm-6">
+						<select class="form-control" ng-model="search.isPanel" >
+							<option value=""  selected > ignore </option>
+							<option value="0" >no</option>
+							<option value="1" >yes</option>
+						</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2">Is In Manual:</label>
+				<div class="col-sm-6">
+					<select class="form-control" ng-model="search.isInManual" >
+							<option value=""  selected > ignore </option>
+							<option value="0" >no</option>
+							<option value="1" >yes</option>
+						</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2">Department:</label>
+				<div class="col-sm-6">
+					<select class="form-control" placeholder="Barcode" 
+						ng-model="search.deptId"
+						ng-options="department[0] as department[1] for department in departments" >
+						<option value="" disabled selected hidden>Choose a department</option>
+					</select>
+				</div>
+				<div class="col-sm-offset-2 col-sm-6"><br/>
+					* <small>A maximum of 300 matching records may be returned.</small>
+				</div>
+			</div>						
+
+			<div class="form-group">
+				<br />
+				<div class="col-sm-offset-2 col-sm-10">						
+					<button type="button" class="btn btn-primary standardButton " ng-click="testSearch(search)">Search</button>
+				</div>
+			</div>
+		</div>		
+	</form>
+</div>
+<div id="gridResult">		
+		<form>
+			<input
+				style="width: 187px; margin-left: 50px;"
+				class="input-medium"
+				ng-model="newTest.TestName"
+				ng-init="newTest.TestName = ''"
+				type="text" autofocus 
+				placeholder="Test Name" 
+				> &nbsp;
+			<input
+				style="width: 62px; "
+				class="input-medium quantity"
+				ng-model="newTest.BarcodeID"
+				ng-init="newTest.BarcodeID = ''"
+				type="text" ng-pattern="onlyNumbers" placeholder="Barcode"
+				> &nbsp;
+			<input
+				style="width: 72px; "
+				class="input-medium"
+				ng-model="newTest.Mnemonic"
+				ng-init="newTest.Mnemonic = ''"
+				type="text"
+				placeholder="Mnemonic"
+				>
+			<input
+				class="input-medium"
+				ng-model="newTest.isPanel"
+				ng-init="newTest.isPanel = '1'"
+				type="checkbox" style="margin-left: 20px;"
+				> Is Panel
+			<input
+				class="input-medium"
+				ng-model="newTest.isInManual"
+				ng-init="newTest.isInManual = '0'"
+				type="checkbox" style="margin-left: 20px; "
+				> In Manual
+			<select class="form-medium" style="width: 190px; margin-left: 20px; "
+						ng-model="newTest.deptId"
+						ng-options="department[0] as department[1] for department in departments" >
+						<option value="" disabled selected hidden>Choose a department</option>
+					</select>
+				
+			<button ng-class="newTest.BarcodeID.length > 0 && newTest.Mnemonic.length > 0 && 'btn btn-sm btn-success' || 'btn btn-sm'" ng-click="newTest.BarcodeID.length > 0 && newTest.Mnemonic.length > 0 && createRow(newTest, search)"> &nbsp; Add New Test &nbsp; </button>
+		</form>
+			
+	<div class="gridDept" ng-grid="dataRowsGridOptions" ></div>
+</div>

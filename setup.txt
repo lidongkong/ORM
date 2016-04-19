@@ -1,0 +1,37 @@
+cd C:\Project\Keyword-wrangler
+
+npm init
+
+This utility will walk you through creating a package.json file. 
+It only covers the most common items, and tries to guess sane defaults.
+
+See `npm help json` for definitive documentation on these fields and exactly what they do.
+
+Use `npm install <pkg> --save` afterwards to install a package and save it as a dependency in the package.json file.
+
+Press ^C at any time to quit. 
+name: (keyword-wrangler) keyword-wrangler
+version: (1.0.0) 0.0.1 
+description: A tool to manage keywords 
+entry point: (index.js) src/backend/index.js 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC)
+About to write to keyword-wrangler/package.json:
+{
+	"name": "keyword-wrangler", 
+	"version": "0.0.1", 
+	"description": "A tool to manage keywords", 
+	"main": "src/backend/index.js", 
+	"scripts": { "test": "echo \"Error: no test specified\" && exit 1" }, 
+	"author": "", 
+	"license": "ISC"
+}
+Is this ok? (yes) yes
+
+
+
+npm install percolator node-dbi mysql db-migrate async bower --save
+npm install jasmine-node request sqlite3 --save-dev

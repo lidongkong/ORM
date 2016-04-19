@@ -1,0 +1,28 @@
+C:\Project\Keyword-wrangler
+
+npm install percolator node-dbi mysql db-migrate async bower --save
+npm install jasmine-node request sqlite3 --save-dev
+
+
+	node_modules\.bin\jasmine-node --verbose ./spec
+	node_modules\.bin\jasmine-node --verbose --captureExceptions ./spec
+	
+	npm install percolator --save
+	
+	node_modules\.bin\bower install
+	
+
+
+
+
+C:\Project\Keyword-wrangler\src\frontend	
+..\..\node_modules\.bin\bower install
+
+
+
+ • check out the code 
+ • run npm install 
+ • run the migrations
+
+
+node-v14-win32-x64

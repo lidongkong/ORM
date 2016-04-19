@@ -1,0 +1,37 @@
+ <style>
+	.errorMsg
+	{
+		color: red;
+		display: none;
+	}
+ </style> 
+
+ 
+ <div style="margin-left:100px;">
+	<h2> </h2>
+
+	<div class="span12" >
+		<form>
+			<div class="col-sm-4 ">
+                    <h3 class="form-signin-heading">Please log in</h3> <span class="errorMsg">Invalid user name or password. Please try again.</span>
+                    <label for="inputUserName" class="sr-only">User name</label>
+                    <input type="text" id="UserName" name="UserName" class="form-control" placeholder="User name" required autofocus 
+						ng-model="account.Username" 
+						ng-init="account.Username = ''"
+					/>
+                    <br />
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="Password" name="Password" class="form-control" placeholder="Password" required 				
+						ng-model="account.Password" 
+						ng-init="account.Password = ''"
+					/> <br />
+
+                    <input type="checkbox" /> <label> Remember me </label> <br/> <br/>
+
+                    <button class="btn btn-md btn-primary " ng-click="validateUser(account)"> &nbsp; &nbsp; Sign in &nbsp; &nbsp; </button>
+			</div>
+	
+		</form>
+	</div>
+
+</div>

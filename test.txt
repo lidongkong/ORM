@@ -1,0 +1,19 @@
+
+netstat -tab
+netstat -?
+netstat -a
+
+cd C:\Project\Keyword-wrangler
+
+set
+set KW_ENV=dev
+set
+set KW_ENV=test
+
+node_modules\.bin\jasmine-node --verbose ./spec/
+node_modules\.bin\jasmine-node --verbose --captureExceptions ./spec/
+
+
+
+
+

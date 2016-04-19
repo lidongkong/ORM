@@ -1,0 +1,7 @@
+POST http://172.28.202.124:8083/api/keywords/ HTTP/1.1
+Host: 172.28.202.124:8083
+Connection: Keep-Alive
+Content-Type: text/json
+Content-Length: 36
+
+{"value": "Onion1", "categoryID": 1}

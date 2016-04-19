@@ -1,0 +1,38 @@
+cd C:\Project\ORMC
+
+set
+set KW_ENV=dev
+set
+set KW_ENV=test
+
+node C:\Project\Keyword-wrangler\src\backend\index.js
+
+node src\backend\index.js
+
+
+
+http://localhost:8083/
+http://localhost:8083/index.html#/dept
+http://localhost:8083/#/dept
+http://localhost:8083/#/container
+http://localhost:8083/#/account
+http://localhost:8083/#/pict
+http://localhost:8083/#/specimen
+
+
+http://localhost:8083/api/keywords
+http://localhost:8083/api/categories
+http://localhost:8083/api/departments
+http://localhost:8083/api/containers
+http://localhost:8083/api/pictures
+http://localhost:8083/api/specimen
+
+
+New Route
+1. create a new folder under C:\Project\ORMC\src\frontend\app (copy an existing one)
+	rename controller
+2. Modify index.html to include the new controller
+3. Modify server.js
+4. Modify app.js
+5. modify editor.html
+

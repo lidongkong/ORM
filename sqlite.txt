@@ -1,0 +1,50 @@
+C:\Project\Keyword-wrangler
+
+sqlite3 var\tmp\keyword-wrangler.dev.sqlite
+sqlite3 var\tmp\keyword-wrangler.test.sqlite			:Create or connected to the databases
+sqlite3 var\\tmp\\keyword-wrangler.test.sqlite
+
+		.open var\\tmp\\keyword-wrangler.dev.sqlite
+		.open var\\tmp\\keyword-wrangler.test.sqlite
+		
+sqlite> .databases
+
+
+sqlite> CREATE TABLE keyword (id INTEGER PRIMARY KEY, value TEXT, categoryID INTEGER);
+sqlite> CREATE TABLE category (id INTEGER PRIMARY KEY, name TEXT);
+sqlite> .help
+sqlite> .tables
+sqlite> .quit
+		SELECT * FROM keyword;   SELECT * FROM category;    SELECT * FROM migrations;
+		INSERT INTO category (name) VALUES ('Vegetable');
+		INSERT INTO category (name) VALUES ('Utility');
+		INSERT INTO keyword (value, categoryID) VALUES ('Aubergine', 1); 
+		INSERT INTO keyword (value, categoryID) VALUES ('Onion', 1);
+		INSERT INTO keyword (value, categoryID) VALUES ('Knife', 2);
+
+	
+Upgrade DB	may need to run: npm install db-migrate-sqlite3 --save-dev
+
+node_modules\.bin\db-migrate create createKeywordAndCategoryTable --env dev
+
+C:\Project\NodeJS\Keyword-wrangler>node_modules\.bin\db-migrate up --env test
+[INFO] Processed migration 20150330224734-createKeywordAndCategoryTable
+[INFO] Done
+	
+	
+rm -f /var/tmp/keyword-wrangler.dev.sqlite 
+
+node_modules\.bin\db-migrate up --env dev 
+echo "DELETE FROM category;" | sqlite3 /var/tmp/keyword-wrangler.dev.sqlite 
+echo "DELETE FROM keyword;" | sqlite3 /var/tmp/keyword-wrangler.dev.sqlite 
+echo "DELETE FROM sqlite_sequence;" | sqlite3 /var/tmp/keyword-wrangler.dev.sqli\ te 
+echo "INSERT INTO category (name) VALUES ('Vegetable');" | sqlite3 /var/tmp/keyw\ ord-wrangler.dev.sqlite 
+echo "INSERT INTO category (name) VALUES ('Utility');" | sqlite3 /var/tmp/keywor\ d-wrangler.dev.sqlite 
+echo "INSERT INTO keyword (value, categoryID) VALUES ('Aubergine', 1);" | sqlite\ 3 /var/tmp/keyword-wrangler.dev.sqlite 
+echo "INSERT INTO keyword (value, categoryID) VALUES ('Onion', 1);" | sqlite3 /v\ ar/tmp/keyword-wrangler.dev.sqlite 
+echo "INSERT INTO keyword (value, categoryID) VALUES ('Knife', 2);" | sqlite3 /v\ ar/tmp/keyword-wrangler.dev.sqlite
+
+From now on, always start the server as follows, from the root folder of the project:
+KW_ENV=dev node src/backend/index.j
+
+	

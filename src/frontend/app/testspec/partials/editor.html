@@ -1,0 +1,32 @@
+ <style>
+	.gridDept { margin-top: 20px; height: 600px; width:800px; borderZ: 1px solid black}
+	.bnSave {margin-left:5px; margin-top:5px;}
+	.bnDelete {margin-top:5px;}
+	input {margin-left: 20px;}
+ </style> 
+
+ 
+ <div style="margin-left:100px;">
+	<h3>Container Pictures</h3>
+
+	<div class="span12" >
+		<form>
+
+			container <select style="width:300px;"
+                ng-model="newContpict.containerID"
+                ng-init="newContpict.containerID = 1"
+                ng-options="container[0] as container[1] for container in containers" >
+			</select>&nbsp; &nbsp; &nbsp; &nbsp; 
+			picture <select style="width:256px;"
+                ng-model="newContpict.pictureID"
+                ng-init="newContpict.pictureID = 2"
+                ng-options="picture[0] as picture[1] for picture in pictures" >
+			</select>
+			
+			<button ng-class="'btn btn-sm btn-success' || 'btn btn-sm'" ng-click="createRow(newContpict)" style="margin-left: 40px; "> &nbsp; Add &nbsp; </button>
+		</form>
+	</div>
+
+	<div class="gridDept" ng-grid="dataRowsGridOptions"></div>
+
+</div>

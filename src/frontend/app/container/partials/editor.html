@@ -1,0 +1,27 @@
+ <style>
+	.gridDept { margin-top: 20px; height: 600px; width:800px; borderZ: 1px solid black}
+	.bnSave {margin-left:5px; margin-top:5px;}
+	.bnDelete {margin-top:5px;}
+ </style> 
+
+ 
+ <div style="margin-left:100px;">
+	<h3>Containers</h3>
+
+	<div class="span12" >
+		<form>
+			<input
+					class="input-medium"
+					ng-model="newKeyword.value"
+					ng-init="newKeyword.value = ''"
+					type="text"
+					placeholder="Name of container"
+					>
+			
+			<button ng-class="newKeyword.value.length > 0 && 'btn btn-sm btn-success' || 'btn btn-sm'" ng-click="newKeyword.value.length > 0 && createRow(newKeyword)"> &nbsp; Add &nbsp; </button>
+		</form>
+	</div>
+
+	<div class="gridDept" ng-grid="dataRowsGridOptions"></div>
+
+</div>

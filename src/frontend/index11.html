@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Keyword Wrangler</title>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/angular-grid/ng-grid.min.css">
+        <style>
+            .gridStyle 
+			{
+				margin-top: 20px; height: 400px;
+            }			
+			.acmTop{
+				background-color: #fff; height:30px; border-bottom: 1px solid #ddd;
+			}
+			.test
+			{
+				border-bottom-color:#000; margin-bottom: 0px; padding-bottom: 0px;
+			}
+			.navacm
+			{
+				min-height:52px !important; 
+				padding-top:0px !important; 
+				padding-bottom:0px !important; 
+				background-color: #efefef; 
+				Border-top-width: 0px; 
+				border-top-color:#ffffff; 
+				border-bottom-color: #eFdDfC;
+			}
+        </style>
+    </head>
+
+    <body>
+		    <!-- Fixed navbar -->
+		<nav class="navbar navbar-info navbar-fixed-top navacm " >
+
+			<p class="acmTop">  &nbsp; </p>
+
+		</nav>
+		<br/><br/><br/><br/><br/><br/><br/>
+	
+        <div id="main" class="container">
+            <div class="span12" ng-view></div>
+        </div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom ">
+			<div class="container small" style="font-size:11px;">
+				<ul class="nav navbar-nav">
+					<li><p class="navbar-text "> &#169;2012-2015 ACM Medical Laboratory. All rights reserved.</p></li>
+				</ul>
+			</div>
+		</nav>	
+	
+        <script src="bower_components/async/lib/async.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/lodash/dist/lodash.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/restangular/dist/restangular.js"></script>
+        <script src="bower_components/angular-grid/build/ng-grid.js"></script>
+
+        <script src="app/app.js"></script>
+        <script src="app/lib/resolveEntity.js"></script>
+        <script src="app/lib/RepositoryFactory.js"></script>
+        <script src="app/keywords/KeywordsController.js"></script>
+    </body>
+
+</html>

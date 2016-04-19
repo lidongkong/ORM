@@ -1,0 +1,358 @@
+ <style>
+	.gridDept { margin-top: 20px; height: 800px; width:1000px; borderZ: 1px solid black; }
+	.bnSave {margin-left:5px; margin-top:5px;}
+	.bnDelete {margin-top:5px;}
+	.standardButton
+	{
+		width: 110px;
+	}
+	
+	#testTab li {cursor:pointer}
+ </style> 
+
+ 
+ <div style="margin-left:00px;" id="searchPane">
+	
+	<h3 class="col-sm-offset-0 col-sm-3" style="margin-bottom: 30px;">Test Configuration</h3>
+	<br/>
+     <div class="col-sm-8" style="margin-top: 8px;"><p class="text-muted"><small>test name:</small> {{test.testName}}; <small>barcode:</small> {{test.barcode}}; <small>mnemonic:</small> {{test.mnemonic}}; <small>isPanel:</small> {{test.isPanel}} </div></p>
+	
+	<ul class="nav nav-tabs col-sm-12" id="testTab">
+			  <li class="active"><a data-target="#home" data-toggle="tab">Basics</a></li>
+			  <li><a data-target="#profile" data-toggle="tab">Specifications</a></li>  
+			  <li><a data-target="#descript" data-toggle="tab">Descriptions</a></li>
+			  <li><a data-target="#messages" data-toggle="tab">CPT & LOINC</a></li>
+			  <li><a data-target="#keywords" data-toggle="tab">Keywords</a></li>
+			  <li><a data-target="#specimenTypes" data-toggle="tab">Specimens</a></li>
+			  <li><a data-target="#panel" data-toggle="tab">Panel</a></li>
+			  <li><a data-target="#specialty" data-toggle="tab">Specialty</a></li>
+			  <li><a data-target="#highlight" data-toggle="tab">Highlight</a></li>
+			  <li><a data-target="#other" data-toggle="tab">Other</a></li>
+	</ul>
+
+	<form class="form-horizontal col-sm-10" role="form">
+	
+		
+
+		<div class="tab-content ">
+			<div class="tab-pane active" id="home"><br/>
+				<div style=" border-style: solid; border-width: 0px; ">
+					<div class="form-group">
+						<label class="control-label col-sm-2">Barcode</label>
+						<div class="col-sm-2">
+							<input class="form-control" id="barcode" name="barcode" placeholder="Barcode" ng-model="test.barcode" />
+						</div>
+						<label class="control-label col-sm-2">Mnemonic</label>
+						<div class="col-sm-2">
+							<input class="form-control" id="mnemonic" name="mnemonic" placeholder="Mnemonic" ng-model="test.mnemonic" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Reviewed</label>
+						<div class="col-sm-1">
+							<input type="checkbox" id="isPanel" name="isPanel" ng-model="test.reviewed" ng-init="1" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Test</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="testName" name="testName" placeholder="Test Name" ng-model="test.testName" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2">LIS Name</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="lisName" name="lisName" placeholder="LIS Name" ng-model="test.lisName" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Alternate Name</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="alterName" name="alterName" placeholder="Alternate Name" ng-model="test.alterName" />
+						</div>
+					</div>			
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Container</label>
+						<div class="col-sm-6">
+							<select class="form-control" 
+								ng-model="test.containerId"
+								ng-options="container[0] as container[1] for container in containers" >
+								<option value="" disabled selected hidden>Choose a container</option>
+							</select>
+						</div>
+					</div>						
+				</div>		
+			</div>
+			
+			<div class="tab-pane" id="profile"><br />			
+				<div style=" border-style: solid; border-width: 0px; ">
+				
+					<div class="form-group">
+						<label class="control-label col-sm-2">Transport Temp</label>
+						<div class="col-sm-6">
+							<select class="form-control" ng-model="test.transportTemp"
+								ng-options="department[0] as department[1] for department in transportTemps" >
+								<option value="" disabled selected hidden>Choose a temperature</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Pref Specimen</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="prefSpecimen" name="prefSpecimen" placeholder="Pref Specimen" ng-model="test.prefSpecimen" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Minimum Volume</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="minimumVolue" name="minimumVolue" placeholder="Minimum Volue" ng-model="test.minimumVolue" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Performed</label>
+						<div class="col-sm-6">
+							M &nbsp; &nbsp; &nbsp; T &nbsp; &nbsp; &nbsp; W &nbsp; &nbsp; &nbsp; T &nbsp; &nbsp; &nbsp; F &nbsp; &nbsp; &nbsp; S &nbsp; &nbsp; &nbsp; S
+						</div>
+						<div class="col-sm-6">
+							<input type="checkbox" id="monday" name="monday" ng-model="test.monday" />&nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="tuesday" name="tuesday" ng-model="test.tuesday" /> &nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="wednesday" name="wednesday" ng-model="test.wednesday" />&nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="thursday" name="thursday" ng-model="test.thursday" />&nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="friday" name="friday" ng-model="test.friday" />&nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="saturday" name="saturday" ng-model="test.saturday" />&nbsp; &nbsp; &nbsp;
+							<input type="checkbox" id="sunday" name="sunday" ng-model="test.sunday" ng-init="1" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Reported</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="reported" name="reported" placeholder="Reported" ng-model="test.reported" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Room T Stability</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="roomStab" name="roomStab" placeholder="Room T Stability" ng-model="test.roomStab" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Refridge Stability</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="refridgeStab" name="refridgeStab" placeholder="Refridge Stability" ng-model="test.refridgeStab" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Frozen Stability</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="frozenStab" name="frozenStab" placeholder="Frozen Stability" ng-model="test.frozenStab" />
+						</div>
+					</div>
+					
+					
+				</div>
+			  
+			</div>
+
+			<div class="tab-pane" id="descript"><br />
+				<div style=" border-style: solid; border-width: 0px; ">
+					<div class="form-group">
+						<label class="control-label col-sm-2">Collection Notes</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="collectNotes" name="collectNotes" placeholder="Collection Notes" ng-model="test.collectNotes" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Also Acceptable</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="alsoAcceptable" name="alsoAcceptable" placeholder="Also Acceptable" ng-model="test.alsoAcceptable" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Methodology</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="methodology" name="methodology" placeholder="Methodology" ng-model="test.methodology" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Reference Range</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="referenceRange" name="referenceRange" placeholder="Reference Range" ng-model="test.referenceRange" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Addendum Text</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="addendum" name="addendum" placeholder="Addendum Text" ng-model="test.addendum" />
+						</div>
+					</div>					
+				</div>
+			</div>
+							
+			<div class="tab-pane" id="messages"><br />
+				<div style=" border-style: solid; border-width: 0px; ">
+					<div class="form-group">
+						<label class="control-label col-sm-2">CPT</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="CPT" name="CPT" placeholder="CPT" ng-model="test.CPT" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">LOINC</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="LOINC" name="LOINC" placeholder="LOINC" ng-model="test.LOINC" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Extra Notes</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="extraNotes" name="extraNotes" placeholder="Extra Notes" ng-model="test.extraNotes" />
+						</div>
+					</div>						
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="keywords"><br />
+				<div class="container">
+					<div id="dual-list-box" class="form-group row">
+						<select multiple="multiple" id="keywordSel" data-title="keywords" data-source="../api/keyword"
+								data-value=0 data-text=1 ></select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="specimenTypes"><br />
+				<div class="container">
+					<div id="dual-list-box" class="form-group row">
+						<select multiple="multiple" id="specimenSel" data-title="specimens" data-source="../api/specimen"
+								data-value=0 data-text=1></select>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="tab-pane" id="panel"><br />
+				<div class="container">
+					<div id="dual-list-box" class="form-group row">
+						<select multiple="multiple" id="panelSel" data-title="tests" data-source="../api/test"
+								data-value=0 data-text=1></select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="specialty"><br />
+				<div class="container">
+					<div id="dual-list-box" class="form-group row">
+						<select multiple="multiple" id="specialtySel" data-title="specialties" data-source="../api/specialty"
+								data-value=0 data-text=1 ></select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="other"><br />
+				<div style=" border-style: solid; border-width: 0px; ">
+					<div class="form-group">
+						<label class="control-label col-sm-2">CMS Website</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="cmsWebsite" name="cmsWebsite" placeholder="CMS Website" ng-model="test.cmsWebsite" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Website Name</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="websiteName" name="websiteName" placeholder="CMS Website Name" ng-model="test.websiteName" />
+						</div>
+					</div><br />
+					<div class="form-group">
+						<label class="control-label col-sm-2">Resource File</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="resourceFile" name="resourceFile" placeholder="Resource File" ng-model="test.resourceFile" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Resource Name</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="resourceName" name="resourceName" placeholder="Resource Name" ng-model="test.resourceName" />
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tab-pane" id="highlight"><br />
+				<div style=" border-style: solid; border-width: 0px; ">
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Highlighted</label>
+						<div class="col-sm-1">
+							<input type="checkbox" id="highlighted" name="highlighted" ng-model="test.highlighted" ng-init="1" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Sort Order</label>
+						<div class="col-sm-6">
+							<select class="form-control" 
+								ng-model="test.deptId"
+								ng-options="department[0] as department[1] for department in departments" >
+								<option value="" disabled selected hidden>Choose a Order</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Post Date</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="postDate" name="postDate" placeholder="Post Date" ng-model="test.postDate" />
+						</div>
+					</div>		
+					<div class="form-group">
+						<label class="control-label col-sm-2">Remove Date</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="removeDate" name="removeDate" placeholder="Remove Date" ng-model="test.removeDate" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Type</label>
+						<div class="col-sm-6">
+							<select class="form-control" 
+								ng-model="test.deptId"
+								ng-options="department[0] as department[1] for department in departments" >
+								<option value="" disabled selected hidden>Choose a Type</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Highlighted Notes</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="highNotes" name="highNotes" placeholder="Highlighted Notes" ng-model="test.highNotes" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<br />
+			<div class="col-sm-offset-2 col-sm-10">						
+				<button type="button" class="btn btn-primary standardButton " ng-click="testSearch(search)">Save All</button>
+			</div>
+		</div>
+				
+	</form>
+			
+
+</div>
+<script src="../../../script/dual-list-box.js"></script>
+<script>
+	//http://jsfiddle.net/xfw8t/12/
+	//jQuery(function () {
+	//	;
+	//})
+</script>

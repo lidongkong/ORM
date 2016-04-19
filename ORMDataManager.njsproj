@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{e29f8511-7097-49b6-b94b-2dae3693d27f}</ProjectGuid>
+        <ProjectHome />
+        <ProjectView>ShowAllFiles</ProjectView>
+        <StartupFile />
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="Fiddler.txt" />
+        <Content Include="index.txt" />
+        <Content Include="setup.txt" />
+        <Content Include="sqlite.txt" />
+        <Content Include="temp.txt" />
+        <Content Include="test.txt" />
+        <Content Include="database.json" />
+        <Content Include="package.json" />
+        <Compile Include="migrations\20151127170621-createKeywordAndCategoryTable.js" />
+        <Compile Include="migrations\20151201140801-createKeywordAndCategoryTable.js" />
+        <Compile Include="spec\resetDatabase.js" />
+        <Compile Include="spec\resetDatabaseA.js" />
+        <Content Include="resource\requestClient\nodejsClient.txt" />
+        <Compile Include="resource\requestClient\request.js" />
+        <Content Include="resource\requestTesting\temp.txt" />
+        <Compile Include="resource\requestTesting\simpleRequest.js" />
+        <Compile Include="spec\e2e\apiSpec.js" />
+        <Compile Include="src\backend\dbSession.js" />
+        <Compile Include="src\backend\env.js" />
+        <Compile Include="src\backend\index.js" />
+        <Compile Include="src\backend\index2.js" />
+        <Compile Include="src\backend\index3.js" />
+        <Compile Include="src\backend\index4.js" />
+        <Compile Include="src\backend\index5.js" />
+        <Compile Include="src\backend\main.js" />
+        <Compile Include="src\backend\server.js" />
+        <Compile Include="src\backend\server4.js" />
+        <Compile Include="src\backend\server5.js" />
+        <Content Include="src\frontend\index02.html" />
+        <Content Include="src\frontend\index01.html" />
+        <Content Include="src\frontend\index11.html" />
+        <Content Include="src\frontend\index.html" />
+        <Content Include="src\frontend\bower.json" />
+        <Compile Include="src\backend\lib\RequestUser.js" />
+        <Compile Include="src\backend\lib\session.js" />
+        <Content Include="src\backend\sql\temp.txt" />
+        <Compile Include="src\backend\sql\execSql.js" />
+        <Compile Include="src\backend\sql\query.js" />
+        <Compile Include="src\frontend\app\app.js" />
+        <Compile Include="src\frontend\script\departments.js" />
+        <Compile Include="src\frontend\script\dual-list-box.js" />
+        <Compile Include="src\frontend\script\dual-list-box.min.js" />
+        <Compile Include="src\frontend\app\account\AccountController.js" />
+        <Compile Include="src\frontend\app\container\ContainerController.js" />
+        <Compile Include="src\frontend\app\contpict\ContpictController.js" />
+        <Compile Include="src\frontend\app\depts\DeptsController.js" />
+        <Compile Include="src\frontend\app\keyword\KeywordController.js" />
+        <Compile Include="src\frontend\app\keywordsBack\KeywordsController.js" />
+        <Compile Include="src\frontend\app\lib\RepositoryFactory.js" />
+        <Compile Include="src\frontend\app\lib\resolveEntity.js" />
+        <Compile Include="src\frontend\app\misword\MiswordController.js" />
+        <Compile Include="src\frontend\app\picture\PictureController.js" />
+        <Compile Include="src\frontend\app\search\SearchController.js" />
+        <Compile Include="src\frontend\app\specimen\SpecimenController.js" />
+        <Compile Include="src\frontend\app\test\TestController.js" />
+        <Compile Include="src\frontend\app\testspec\TestspecController.js" />
+        <Content Include="src\frontend\app\account\partials\editor.html" />
+        <Content Include="src\frontend\app\account\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\container\partials\editor.html" />
+        <Content Include="src\frontend\app\container\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\contpict\partials\containerGridCell.html" />
+        <Content Include="src\frontend\app\contpict\partials\containerGridCellEditor.html" />
+        <Content Include="src\frontend\app\contpict\partials\editor.html" />
+        <Content Include="src\frontend\app\contpict\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\contpict\partials\pictureGridCell.html" />
+        <Content Include="src\frontend\app\contpict\partials\pictureGridCellEditor.html" />
+        <Content Include="src\frontend\app\depts\partials\editor.html" />
+        <Content Include="src\frontend\app\depts\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\keyword\partials\editor.html" />
+        <Content Include="src\frontend\app\keyword\partials\keywordCategoryGridCell.html" />
+        <Content Include="src\frontend\app\keyword\partials\keywordCategoryGridCellEditor.html" />
+        <Content Include="src\frontend\app\keyword\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\keywordsBack\partials\editor.html" />
+        <Content Include="src\frontend\app\keywordsBack\partials\keywordCategoryGridCell.html" />
+        <Content Include="src\frontend\app\keywordsBack\partials\keywordCategoryGridCellEditor.html" />
+        <Content Include="src\frontend\app\keywordsBack\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\misword\partials\editor.html" />
+        <Content Include="src\frontend\app\misword\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\picture\partials\editor.html" />
+        <Content Include="src\frontend\app\picture\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\search\partials\deptGridCell.html" />
+        <Content Include="src\frontend\app\search\partials\deptGridCellEditor.html" />
+        <Content Include="src\frontend\app\search\partials\editor.html" />
+        <Content Include="src\frontend\app\search\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\shared\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\specimen\partials\editor.html" />
+        <Content Include="src\frontend\app\specimen\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\test\partials\deptGridCell.html" />
+        <Content Include="src\frontend\app\test\partials\deptGridCellEditor.html" />
+        <Content Include="src\frontend\app\test\partials\editor.html" />
+        <Content Include="src\frontend\app\test\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\testspec\partials\containerGridCell.html" />
+        <Content Include="src\frontend\app\testspec\partials\containerGridCellEditor.html" />
+        <Content Include="src\frontend\app\testspec\partials\editor.html" />
+        <Content Include="src\frontend\app\testspec\partials\operationsGridCell.html" />
+        <Content Include="src\frontend\app\testspec\partials\pictureGridCell.html" />
+        <Content Include="src\frontend\app\testspec\partials\pictureGridCellEditor.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="migrations" />
+        <Folder Include="resource" />
+        <Folder Include="resource\requestClient" />
+        <Folder Include="resource\requestTesting" />
+        <Folder Include="spec" />
+        <Folder Include="spec\e2e" />
+        <Folder Include="src" />
+        <Folder Include="src\backend" />
+        <Folder Include="src\backend\lib" />
+        <Folder Include="src\backend\sql" />
+        <Folder Include="src\frontend" />
+        <Folder Include="src\frontend\app" />
+        <Folder Include="src\frontend\app\account" />
+        <Folder Include="src\frontend\app\account\partials" />
+        <Folder Include="src\frontend\app\container" />
+        <Folder Include="src\frontend\app\container\partials" />
+        <Folder Include="src\frontend\app\contpict" />
+        <Folder Include="src\frontend\app\contpict\partials" />
+        <Folder Include="src\frontend\app\depts" />
+        <Folder Include="src\frontend\app\depts\partials" />
+        <Folder Include="src\frontend\app\keyword" />
+        <Folder Include="src\frontend\app\keyword\partials" />
+        <Folder Include="src\frontend\app\keywordsBack" />
+        <Folder Include="src\frontend\app\keywordsBack\partials" />
+        <Folder Include="src\frontend\app\lib" />
+        <Folder Include="src\frontend\app\misword" />
+        <Folder Include="src\frontend\app\misword\partials" />
+        <Folder Include="src\frontend\app\picture" />
+        <Folder Include="src\frontend\app\picture\partials" />
+        <Folder Include="src\frontend\app\search" />
+        <Folder Include="src\frontend\app\search\partials" />
+        <Folder Include="src\frontend\app\shared" />
+        <Folder Include="src\frontend\app\shared\partials" />
+        <Folder Include="src\frontend\app\specimen" />
+        <Folder Include="src\frontend\app\specimen\partials" />
+        <Folder Include="src\frontend\app\test" />
+        <Folder Include="src\frontend\app\test\partials" />
+        <Folder Include="src\frontend\app\testspec" />
+        <Folder Include="src\frontend\app\testspec\partials" />
+        <Folder Include="src\frontend\script" />
+        <Folder Include="var" />
+        <Folder Include="var\tmp" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+    <ProjectExtensions>
+        <VisualStudio>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+            <WebProjectProperties>
+              <UseIIS>False</UseIIS>
+              <AutoAssignPort>True</AutoAssignPort>
+              <DevelopmentServerPort>0</DevelopmentServerPort>
+              <DevelopmentServerVPath>/</DevelopmentServerVPath>
+              <IISUrl>http://localhost:48022/</IISUrl>
+              <NTLMAuthentication>False</NTLMAuthentication>
+              <UseCustomServer>True</UseCustomServer>
+              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+            </WebProjectProperties>
+          </FlavorProperties>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+            <WebProjectProperties>
+              <StartPageUrl>
+              </StartPageUrl>
+              <StartAction>CurrentPage</StartAction>
+              <AspNetDebugging>True</AspNetDebugging>
+              <SilverlightDebugging>False</SilverlightDebugging>
+              <NativeDebugging>False</NativeDebugging>
+              <SQLDebugging>False</SQLDebugging>
+              <ExternalProgram>
+              </ExternalProgram>
+              <StartExternalURL>
+              </StartExternalURL>
+              <StartCmdLineArguments>
+              </StartCmdLineArguments>
+              <StartWorkingDirectory>
+              </StartWorkingDirectory>
+              <EnableENC>False</EnableENC>
+              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+            </WebProjectProperties>
+          </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+</Project>
